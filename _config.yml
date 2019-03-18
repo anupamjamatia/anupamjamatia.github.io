@@ -1,0 +1,190 @@
+url: "https://anupamjamatia.github.io"
+baseurl: ""
+title: ""
+description: "Assistant Professor, NLP Researcher"
+avatar: "/img/aj.jpg"
+
+navbar-links:
+
+  About Me: "about-me"
+  Publications: "publication"
+
+  Online:
+    - Google Scholer: "https://scholar.google.co.in/citations?user=laT3mwoAAAAJ&hl=en"
+    - Orcid: "https://orcid.org/0000-0001-6244-8626"
+    - dblp: "https://dblp.uni-trier.de/pers/hd/j/Jamatia:Anupam"
+    - SCOPUS: "https://www.scopus.com/authid/detail.uri?authorId=55595812300"
+    - Twitter: "http://twitter.com/anupamjamatia"
+    - Facebook: "https://www.facebook.com/anupamjamatia"
+    - LinkedIn: "https://www.linkedin.com/in/anupam-jamatia-14324b19/"   
+
+author:
+  name: "Anupam Jamatia"
+  email: "anupamjamatia@gmail.com"
+  github: "anupamjamatia"
+  googlescholar: "laT3mwoAAAAJ"
+  impactstory: "0000-0001-6244-8626"
+  linkedin: "in/anupam-jamatia-14324b19"
+  twitter: "anupamjamatia"
+
+footer-links-active:
+  email: true
+  github: false
+  googlescholar: true
+  impactstory: false
+  linkedin: false
+  twitter: true
+  facebook: true
+  rss: false
+  stackoverflow: false
+
+
+
+scholar:
+  style: bibliography/mycslfile.csl
+  locale: en
+
+  sort_by: year
+  order: descending
+  bibliography_list_tag: "ul"
+
+  source: bibliography
+  bibliography: mybiblio
+  bibliography_template: bibtemplate
+  repository: ./assets/pdf
+  
+
+  replace_strings: true
+
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"
+
+#plugins_dir: [jekyll-scholar]  
+
+plugins:
+   - jekyll-mentions
+   - jemoji
+   - jekyll-redirect-from
+   - jekyll-sitemap
+   - jekyll-feed
+   - jekyll-coffeescript
+   - jekyll-gist
+   - jekyll-github-metadata
+   - jekyll-paginate
+   - jekyll-relative-links
+   - jekyll-optional-front-matter
+   - jekyll-readme-index
+   - jekyll-default-layout
+   - jekyll-titles-from-headings
+   - jekyll-feed
+   - jekyll-redirect-from
+   - jekyll-seo-tag
+   - jekyll-sitemap
+   - jekyll-avatar
+   - jemoji
+   - jekyll-mentions
+   - jekyll-scholar
+   - jekyll-seo-tag
+             
+
+url-pretty: "anupamjamatia.github.io"
+#disqus: ""
+# google_analytics: ""
+
+
+timezone: "Asia/Kolkata"
+markdown: kramdown
+highlighter: rouge
+permalink: /:year-:month-:day-:title/
+paginate_path: "/articles/:num/"
+paginate: 99
+
+
+kramdown:
+  input: GFM
+
+
+# Pagination Settings
+pagination:
+  enabled: false
+  per_page: 3
+  permalink: '/page/:num/'
+  title: ':title - page :num of :max'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+
+
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true  # add comments to all blog posts
+  -
+    scope:
+      path: "" # all files
+    values:
+      layout: "page"
+      show-avatar: true
+
+# Exclude these files from production site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+  - Vagrantfile
+  - Rakefile
+
+# prose.io config
+prose:
+  rooturl: '_posts'
+  media: 'img'
+  ignore:
+    - 404.html
+    - LICENSE
+    - feed.xml
+    - _config.yml
+    - /_layouts
+    - /_includes
+    - /css
+    - /img
+    - /js
+  metadata:
+    _posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Post title"
+          placeholder: "Title"
+          alterable: true
+      - name: "subtitle"
+        field:
+          element: "textarea"
+          label: "Subtitle"
+          placeholder: "A description of your post."
+          alterable: true
+      - name: "date"
+        field:
+          element: "text"
+          label: "Date"
+          help: "Enter date of post."
+          placeholder: "yyyy-mm-dd"
+          alterable: true
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Publish"
+          help: "Check to publish post, uncheck to hide."
