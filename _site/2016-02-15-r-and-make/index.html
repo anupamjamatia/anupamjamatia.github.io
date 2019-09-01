@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Automating data-analysis pipelines using R and Make</title>
+
+  <meta name="author" content="Anupam Jamatia" />
+  
+  
+  <meta name="description" content="Slides and a hands-on activity">
+  
+
+  <link rel="alternate" type="application/rss+xml" title=" - Assistant Professor, NLP Researcher" href="/feed.xml" />
+
+  
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+      <link rel="shortcut icon" type="image/png" href="favicon.png">
+    
+      
+  
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+      <link rel="shortcut icon" type="image/png" href="favicon.png">
+    
+      <link rel="stylesheet" href="/css/main.css" />
+      <link rel="shortcut icon" type="image/png" href="favicon.png">
+    
+    
+  
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+      <link rel="shortcut icon" type="image/png" href="favicon.png">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+      <link rel="shortcut icon" type="image/png" href="favicon.png">
+    
+  
+
+    
+  
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  <meta property="og:title" content="Automating data-analysis pipelines using R and Make" />
+  <meta property="og:type" content="website" />
+  
+  
+  <meta property="og:url" content="http://localhost:4000/2016-02-15-r-and-make//" />
+  
+  
+  
+  <meta property="og:image" content="http://localhost:4000/img/aj.jpg" />
+  
+  
+</head>
+
+
+  <body>
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:4000"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li>
+            
+            
+
+
+
+
+
+<a href="/about-me">About Me</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+            
+
+
+
+
+
+<a href="/publication">Publications</a>
+
+          </li>
+        
+        
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Online</a>
+            <div class="navlinks-children">
+              
+                
+                  
+            
+
+
+
+
+
+<a href="https://scholar.google.co.in/citations?user=laT3mwoAAAAJ&hl=en">Google Scholer</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="https://orcid.org/0000-0001-6244-8626">Orcid</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="https://dblp.uni-trier.de/pers/hd/j/Jamatia:Anupam">dblp</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=55595812300">SCOPUS</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="http://twitter.com/anupamjamatia">Twitter</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="https://www.facebook.com/anupamjamatia">Facebook</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="https://www.linkedin.com/in/anupam-jamatia-14324b19/">LinkedIn</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href="http://localhost:4000 ">
+	      <img class="avatar-img" src="/img/aj.jpg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Automating data-analysis pipelines using R and Make</h1>
+		  
+		    
+			<h2 class="post-subheading">Slides and a hands-on activity</h2>
+			
+		  
+		  
+		  
+		  <span class="post-meta">Posted on February 15, 2016</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+	      <p><a href="http://stat545-ubc.github.io/automation01_slides/">Slides</a> and a <a href="http://stat545-ubc.github.io/automation04_make-activity.html">hands-on activity</a></p>
+
+<p><a href="http://xkcd.com/1319/"><img src="https://imgs.xkcd.com/comics/automation.png" alt="Automation: xkcd comic 1319" /></a></p>
+
+<blockquote>
+  <p>‘Automating’ comes from the roots ‘auto-‘ meaning ‘self-‘, and ‘mating’, meaning ‘screwing’.</p>
+</blockquote>
+
+<p>Bioinformatics analysis often involves designing a pipeline of commands and running that pipeline on many data sets. There are many ways to tackle this common task. Running commands interactively at the command line has the downside of being terribly unreproducible, unless one’s memory is fantastically infallible. Recording the commands in a shell script certainly beats storing the commands in one’s leaky brain, but is not particularly well suited to resuming the pipeline at a particular point, as is necessary after making a change to one step of the pipeline, nor to running independents steps in parallel. The venerable UNIX Make program is surprisingly well suited to describing bioinformatics pipelines. Make can resume a pipeline after a failed command without needing to start over, and it runs independent jobs in parallel. A Makefile describes a pipeline of shell commands and the interdependencies of the input and output files of those commands. A Makefile can be easily displayed as a graphical flow chart of files and shell commands, and such a visualization is a pleasing and powerful way to interpret a pipeline oneself or to communicate a pipeline to a collaborator.</p>
+
+<p>See also <a href="http://sjackman.ca/open-science/">Open, reproducible science using Make, RMarkdown and Pandoc</a></p>
+
+	    </article>
+	  	  
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="/2016-02-13-white-spruce-organelles/" data-toggle="tooltip" data-placement="top" title="Organellar genomes of white spruce">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="/2016-03-01-linuxbrew/" data-toggle="tooltip" data-placement="top" title="Linuxbrew and Homebrew-Science">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+      
+	    
+        <div class="disqus-comments">
+	        
+
+        </div>
+	    
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+		  
+          <li>
+            <a href="https://twitter.com/anupamjamatia" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="mailto:anupamjamatia@gmail.com" title="Email me">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+		  
+		  		  
+        </ul>
+        <p class="copyright text-muted">
+		  Anupam Jamatia
+		  &nbsp;&bull;&nbsp;
+		  2019
+		  
+		  
+		  &nbsp;&bull;&nbsp;
+		  <a href="http://localhost:4000">anupamjamatia.github.io</a>
+		  
+	    </p>
+	        <!-- Please don't remove this, keep my open source work credited :) -->
+    <p class="theme-by text-muted">
+		  Theme by
+		  <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a> <br />
+      Last Modified: February 18, 2019 IST <br />
+        The content on this site is shared under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 license</a>, unless otherwise noted
+		</p>
+     </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+
+  
+  </body>
+</html>
