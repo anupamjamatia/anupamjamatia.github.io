@@ -41,7 +41,7 @@ footer-links-active:
 
 
 scholar:
-  style: bibliography/mycslfile.csl
+  style: bibliography/ieee.csl
   locale: en
 
   sort_by: year
