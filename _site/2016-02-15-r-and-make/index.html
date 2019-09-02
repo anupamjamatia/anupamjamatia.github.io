@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Anupam Jamatia</title>
+  <title>Automating data-analysis pipelines using R and Make</title>
 
   <meta name="author" content="Anupam Jamatia" />
   
   
-  <meta name="description" content="Assistant Professor | NLP Researcher">
+  <meta name="description" content="Slides and a hands-on activity">
   
 
   <link rel="alternate" type="application/rss+xml" title=" - Assistant Professor, NLP Researcher" href="/feed.xml" />
@@ -50,11 +50,11 @@
   
 
   <!-- Facebook OpenGraph tags -->
-  <meta property="og:title" content="Anupam Jamatia" />
+  <meta property="og:title" content="Automating data-analysis pipelines using R and Make" />
   <meta property="og:type" content="website" />
   
   
-  <meta property="og:url" content="http://localhost:4000/about-me/" />
+  <meta property="og:url" content="http://localhost:4000/2016-02-15-r-and-make//" />
   
   
   
@@ -231,15 +231,16 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-heading">
-          <h1>Anupam Jamatia</h1>
+        <div class="post-heading">
+          <h1>Automating data-analysis pipelines using R and Make</h1>
 		  
 		    
-            <hr class="small">
-            <span class="page-subheading">Assistant Professor | NLP Researcher</span>
+			<h2 class="post-subheading">Slides and a hands-on activity</h2>
 			
 		  
 		  
+		  
+		  <span class="post-meta">Posted on February 15, 2016</span>
 		  
         </div>
       </div>
@@ -251,13 +252,42 @@
 
 
 
-<div class="container" role="main">
+<div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <div style="text-align: justify"> 
-I am working as an Assistant Professor in the Department of Computer Science and Engineering at National Institute of Technology, Agartala (NIT, Agartala), Tripura, India. My area of research interest includes all aspects of Natural Language Processing, Computational Linguistis, Language Technology, Text Processing, Computational Social Sciences.
-</div>
+      <article role="main" class="blog-post">
+	      <p><a href="http://stat545-ubc.github.io/automation01_slides/">Slides</a> and a <a href="http://stat545-ubc.github.io/automation04_make-activity.html">hands-on activity</a></p>
 
+<p><a href="http://xkcd.com/1319/"><img src="https://imgs.xkcd.com/comics/automation.png" alt="Automation: xkcd comic 1319" /></a></p>
+
+<blockquote>
+  <p>‘Automating’ comes from the roots ‘auto-‘ meaning ‘self-‘, and ‘mating’, meaning ‘screwing’.</p>
+</blockquote>
+
+<p>Bioinformatics analysis often involves designing a pipeline of commands and running that pipeline on many data sets. There are many ways to tackle this common task. Running commands interactively at the command line has the downside of being terribly unreproducible, unless one’s memory is fantastically infallible. Recording the commands in a shell script certainly beats storing the commands in one’s leaky brain, but is not particularly well suited to resuming the pipeline at a particular point, as is necessary after making a change to one step of the pipeline, nor to running independents steps in parallel. The venerable UNIX Make program is surprisingly well suited to describing bioinformatics pipelines. Make can resume a pipeline after a failed command without needing to start over, and it runs independent jobs in parallel. A Makefile describes a pipeline of shell commands and the interdependencies of the input and output files of those commands. A Makefile can be easily displayed as a graphical flow chart of files and shell commands, and such a visualization is a pleasing and powerful way to interpret a pipeline oneself or to communicate a pipeline to a collaborator.</p>
+
+<p>See also <a href="http://sjackman.ca/open-science/">Open, reproducible science using Make, RMarkdown and Pandoc</a></p>
+
+	    </article>
+	  	  
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="/2016-02-13-white-spruce-organelles/" data-toggle="tooltip" data-placement="top" title="Organellar genomes of white spruce">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="/2016-03-01-linuxbrew/" data-toggle="tooltip" data-placement="top" title="Linuxbrew and Homebrew-Science">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+      
+	    
+        <div class="disqus-comments">
+	        
+
+        </div>
 	    
     </div>
   </div>
